@@ -1,0 +1,5 @@
+python liveness_demo.py --model liveness.model --le le.pickle --detector face_detector
+python train.py --dataset dataset --model liveness.model --le le.pickle
+python gather_examples.py --input videos/real.mov --output dataset/real --detector face_detector --skip 4
+python gather_examples.py --input videos/fake.mp4 --output dataset/fake --detector face_detector --skip 1
+wget https://github.com/Shiva486/facial_recognition/blob/master/res10_300x300_ssd_iter_140000.caffemodel
